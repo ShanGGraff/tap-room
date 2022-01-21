@@ -12,7 +12,7 @@
 4. [Known Bugs](#bugs)
 5. [License](#license)
 6. [Contact Information](#contact)
-7. [More Info on REACT/Boilerpoint](#react)
+7. [More Info on REACT/Boilerplate](#react)
 
 ## Technologies Used <a id="technologies"></a>
 
