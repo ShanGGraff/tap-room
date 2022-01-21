@@ -3,7 +3,11 @@ import Keg from "./Keg";
 
 function KegList(){
   return (
-    <Keg />
+    <Keg 
+      brand="Ecliptic"
+      name="Starburst IPA"
+      price="5"
+      abv="7.8"/>
   );
 }
 
