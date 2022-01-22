@@ -10,7 +10,8 @@ class TapRoomControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       mainKegList: [],
-      selectedKeg: null
+      selectedKeg: null,
+      editing: false
     };
   }
 
