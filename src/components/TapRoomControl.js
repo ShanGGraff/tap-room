@@ -7,23 +7,31 @@ class TapRoomControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
+      mainKegList: []
     };
+  }
+
+  handleClick = () => {
+    this.setState(prevState => ({
+      formVisibleOnPage: !prevState.formVisibleOnPage
+    }));
   }
 
   render(){
     let currentlyVisibleState = null;
-    let addKegButton = null;
+    let buttonText = null;
     if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewKegForm />
+      currentlyVisibleState = <NewKegForm />;
+      buttonText = "Return to Keg List";
     } else {
-      currentlyVisibleState = <KegList />
-      addKegButton = <button onClick={this.handleClick}> Add keg</button>
+      currentlyVisibleState = <KegList kegList={this.state.mainKegList} />;
+      buttonText = "Add Keg";
     }
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        {addKegButton}
+        <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
   }
