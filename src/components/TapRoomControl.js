@@ -38,15 +38,60 @@ class TapRoomControl extends React.Component {
     this.setState({selectedKeg: selectedKeg});
   }
 
+  handleDecrementKegQuantity = (id) => {
+    if (this.state.mainKegList.length > 1) {
+      const selectedKeg = this.state.mainKegList.filter(
+        (keg) => keg.id === id
+      )[0];
+      if(selectedKeg.quantity > 0){
+        selectedKeg.quantity--;
+        const newMainKegList = this.state.mainKegList
+          .filter((keg) => keg.id !== id)
+          .concat(selectedKeg);
+        this.setState({
+          mainKegList: newMainKegList,
+        })};
+    } else {
+      const selectedKeg = this.state.mainKegList.filter(
+        (keg) => keg.id === id
+      )[0];
+      if(selectedKeg.quantity > 0){
+      selectedKeg.quantity--;
+      const newKegListArray = [];
+      const changedKegArray = newKegListArray.concat(selectedKeg);
+      this.setState({
+        mainKegList: changedKegArray,
+      })};
+    }
+  };
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
-    
+
+    // if (this.state.editing) {
+    //   currentlyVisibleState = (
+    //     <EditKegForm
+    //       keg={this.state.selectedKeg}
+    //       onEditKeg={this.handleEditingKegInList}
+    //     />
+    //   );
+    //   buttonText = "Return To Keg List";
+    // } 
     if (this.state.selectedKeg != null) {
+      currentlyVisibleState = (
+        <KegDetail
+          keg={this.state.selectedKeg}
+          onClickBuy={this.handleDecrementQuantity}
+        />
+      );
+      buttonText = "Return to Keg List";
+    
+    } else if (this.state.selectedKeg != null) {
       currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} />
-      buttonText = "Return to Ticket List"
-    }
-    else if (this.state.formVisibleOnPage) {
+      buttonText = "Return to Keg List"
+
+    } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList}/>;
       buttonText = "Return to Keg List";
     
