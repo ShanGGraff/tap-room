@@ -28,7 +28,7 @@ function KegDetail(props){
 
 KegDetail.propTypes = {
   keg: PropTypes.object,
-  onClickBuy: PropTypes.func,
+  onClickingkBuy: PropTypes.func,
   onClickingDelete: PropTypes.func
 };
 
