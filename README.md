@@ -22,10 +22,11 @@
 
 ## Setup/Installation Requirements <a id="setup"></a>
 
-1. Run the following command: ```git clone https://github.com/ShanGGraff/tap-room``` in a directory of your choice.
-2. Navigate to the ```tap-room/``` directory and run ```npm install```.
+1. [Make sure you have Node.js installed](https://nodejs.org/en/download/)
+2. Run the following command: ```git clone https://github.com/ShanGGraff/tap-room``` in a directory of your choice.
+3. Navigate to the ```tap-room/``` directory and run ```npm install```.
 4. Next run ```npm run build```.
-3. Once all the packages have been downloaded and installed, run ```npm start```. This will start a local server and open a tab on your browser where you can use the application.
+5. Once all the packages have been downloaded and installed, run ```npm start```. This will start a local server and open a tab on your browser where you can use the application.
 
 ## Tap Room Layout<a id="layout"></a>
 
