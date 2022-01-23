@@ -12,6 +12,13 @@ function KegDetail(props){
           <li>Price: ${keg.price} per pint</li>
           <li>ABV: {keg.abv}</li>
         </ul>
+        <p>
+        {keg.quantity > 0 ? (
+            <b>Pints left: {keg.quantity}</b> 
+          ) : (
+            <b>Keg is empty!</b>
+          )}
+          </p>
         <button onClick={() => onClickBuy(keg.id)}>Buy A Pint!</button>
       <hr/>
     </React.Fragment>
@@ -19,7 +26,8 @@ function KegDetail(props){
 }
 
 KegDetail.propTypes = {
-  keg: PropTypes.object
+  keg: PropTypes.object,
+  onClickBuy: PropTypes.func
 };
 
 export default KegDetail;
