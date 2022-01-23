@@ -11,7 +11,7 @@ class TapRoomControl extends React.Component {
       formVisibleOnPage: false,
       mainKegList: [],
       selectedKeg: null,
-      editing: false
+      // editing: false
     };
   }
 
@@ -88,8 +88,11 @@ class TapRoomControl extends React.Component {
     // } 
     if (this.state.selectedKeg != null) {
       currentlyVisibleState = 
-        <KegDetail keg = {this.state.selectedKeg} onClickingDelete = {this.handleDeletingKeg} />
-          //onClickBuy={this.handleDecrementQuantity}
+        <KegDetail 
+        keg = {this.state.selectedKeg} 
+        onClickingDelete = {this.handleDeletingKeg}
+        onClickingBuy={this.handleDecrementKegQuantity}
+        />
       
       buttonText = "Return to Keg List";
 
